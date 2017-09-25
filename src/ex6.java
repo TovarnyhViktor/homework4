@@ -1,27 +1,27 @@
-public class ex6 {
-        static String drawRectangle(int width, int height,int i,int a) {
+    public class ex6 {
+        static String drawRectangle(int width, int height, int i, int a,int r) {
             String result = "";
-            /*for(int i = 0; i < height; i++) {
-                String line = "";
-                for(int j = 0; j < width; j++) {
-                    line += '+' ;
-                }
-                result += line + "\n";
-            }*/
-            if(i < height){
-                i++;
+            if(r==1){
+                r--;
+                height--;
+            }
+            if(i < height || a<width){
                 String line = "";
                 if(a<width){
                     a++;
-                    line+='+';
+                    result= line+='+';
                 }
-                result += line + "\n";
-                drawRectangle(width,height,i,a);
-                return result;
+                if(i<height && a==width){
+                    i++;
+                    result += "\n";
+                    a=0;
+                }
+                result += drawRectangle(width,height,i,a,r);
             }
+            return result;
         }
 
         public static void main(String[] args) {
-            System.out.println(drawRectangle(3, 2,0,0));
+            System.out.println(drawRectangle(4, 3,0,0,1));
         }
     }
