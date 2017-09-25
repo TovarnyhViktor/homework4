@@ -1,13 +1,13 @@
 public class ex3 {
     static String drawRectangle(int width) {
         String result = "";
-        for (int i = 0; i < width; i++) {
-            String line = "";
-            for (int j = 0; j < width; j++) {
-                line += '+' ;
+            for(int j = 0; j<width; j++) {
+                for (int i = 0; i < width; i++) {
+                    result+='+';
+                }
+                result += "\n";
             }
-            result += line + "\n";
-        }
+
         return result;
     }
 
